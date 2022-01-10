@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.loginapplication.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_firebaseLoginFragment"
+            app:destination="@id/firebaseLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.loginapplication.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+
+
+    <fragment android:id="@+id/firebaseLoginFragment" tools:layout="@layout/fragment_firebase_login" android:label="fragment_firebase_login" android:name="com.example.loginapplication.FirebaseLoginFragment">
+
+    <action android:id="@+id/action_firebaseLoginFragment_to_firebaseRegisterFragment" app:destination="@id/firebaseRegisterFragment"/>
+        <action
+            android:id="@+id/action_firebaseLoginFragment_to_firebaseRegisterFragment2"
+            app:destination="@id/firebaseRegisterFragment" />
+
+    </fragment>
+
+
+    <fragment android:id="@+id/firebaseRegisterFragment" tools:layout="@layout/fragment_firebase_register" android:label="fragment_firebase_register" android:name="com.example.loginapplication.FirebaseRegisterFragment">
+
+    <action android:id="@+id/action_firebaseRegisterFragment_to_firebaseLoginFragment" app:destination="@id/firebaseLoginFragment"/>
+
+</fragment>
+</navigation>
